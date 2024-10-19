@@ -1,2 +1,2 @@
 # pyspark_examples
-- Add pyspark practice code
+- Spark UI - http://localhost:4040
