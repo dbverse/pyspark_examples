@@ -1,0 +1,76 @@
+[
+    {
+      "TimeGenerated": "2025-03-10T10:15:00Z",
+      "Resource": "adf-myfactory",
+      "Category": "PipelineRuns",
+      "PipelineName": "Ingest_Customer_Data",
+      "Status": "Succeeded",
+      "RunId": "7b4b9aef-12f4-4c6c-bf8e-91d5e824a3f6",
+      "Parameters": {
+        "source": "BlobStorage",
+        "destination": "Snowflake"
+      },
+      "Duration": 120,
+      "properties": {
+        "Output": {
+          "billingReference": {
+            "activityType": "executedataflow",
+            "billableDuration": [
+              {
+                "meterType": "MemoryOptimized",
+                "duration": 4.7229,
+                "unit": "coreHour",
+                "sessionType": "JobCluster"
+              }
+            ]
+          }
+        },
+        "Annotations": [
+          "Daily Batch Load",
+          "Priority: High"
+        ]
+      }
+    },
+    {
+      "TimeGenerated": "2025-03-10T10:15:05Z",
+      "Resource": "adf-myfactory",
+      "Category": "ActivityRuns",
+      "PipelineName": "Ingest_Customer_Data",
+      "ActivityName": "CopyData_BlobToSnowflake",
+      "Status": "Succeeded",
+      "RunId": "ae6f4c28-6e5f-4d9e-8db9-12d3f32a7e8a",
+      "Output": {
+        "RowsCopied": 50000
+      },
+      "Error": "",
+      "properties": {
+        "billingReference": {
+          "activityType": "copydata",
+          "billableDuration": [
+            {
+              "meterType": "Standard",
+              "duration": 2.1,
+              "unit": "coreHour",
+              "sessionType": "Activity"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "TimeGenerated": "2025-03-10T10:00:00Z",
+      "Resource": "adf-myfactory",
+      "Category": "TriggerRuns",
+      "TriggerName": "Daily_Customer_Load",
+      "Status": "Succeeded",
+      "TriggerType": "ScheduleTrigger",
+      "RunId": "3a9d1d6e-ef3a-41f8-9c0b-8d82d5e27d4b",
+      "properties": {
+        "TriggerDetails": {
+          "scheduleType": "Daily",
+          "recurrence": "Every 24 hours"
+        }
+      }
+    }
+  ]
+  
