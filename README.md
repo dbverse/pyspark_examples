@@ -1,12 +1,14 @@
-# Spark & Other Examples with Implementation techniques
+# Spark & Other Examples with Implementation techniques (Refer src folder)
 ## Concepts implemented:
 
-- Partition By vs Bucket By
+- Partition By vs Bucket By (1_partitionby_bucketby)
+- Spark aggregation (2_spark_agg_examples)
 
 # Unity Catalog OSS
 
 ### Launch spark-sql with Unity Catalog (Open Source) Support
 
+- Unity Catalog Open Source example (3_uc_oss_loadtable)
 - The below config points to a Catalog called 'demo' which was created in Unity Catalog UI after installing it locally
 - For this to work, Unity Catalog should be installed and started prior to Spark session (in this case while trying to use Spark SQL). [Refer here ](https://github.com/unitycatalog/unitycatalog)
 - To run spark-sql using the open-source Unity Catalog, Delta Lake (S3 integration optional):
