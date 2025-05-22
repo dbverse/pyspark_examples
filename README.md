@@ -1,6 +1,4 @@
 # Spark & Other Examples with Implementation techniques
-- Spark UI - http://localhost:4040
-
 ## Concepts implemented:
 
 - Partition By vs Bucket By
