@@ -42,8 +42,18 @@ except Exception as e:
     print("This likely indicates a problem with Write.")
     spark.stop()
 
+# ddl_statement = f"""
+#     CREATE OR REPLACE TABLE demo.uc_emp.address
+#     USING DELTA
+#     LOCATION '{delta_table_path}'
+#     COMMENT 'External table registered in Unity Catalog from existing Delta files';
+#     """
+# spark.sql(ddl_statement).show()
+
 ddl_statement = f"""
     CREATE OR REPLACE TABLE demo.uc_emp.address
+    (AddressID INT, AddressLine1 STRING, AddressLine2 STRING, City STRING, StateProvince STRING, 
+    CountryRegion STRING, PostalCode STRING, rowguid STRING, ModifiedDate TIMESTAMP)
     USING DELTA
     LOCATION '{delta_table_path}'
     COMMENT 'External table registered in Unity Catalog from existing Delta files';
