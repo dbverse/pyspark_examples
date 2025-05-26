@@ -23,7 +23,7 @@
 - Even if external tables can be created using delta in pyspark, UC OSS still requires manual DDL and column definition so that metadata is properly captured in the UI. Otherwise, when using pyspark alone, the metadata is available only through DESCRIBE command in CLI
 
 <pre><code>~/spark_env/unitycatalog$ bin/uc table create \
-    --full_name demo.uc_emp.address_2 \
+    --full_name demo.employee.address_v2 \
     --storage_location /home/obiwan/dbverse_git/pyspark_examples/src/processed/uc_address \
     --format delta \
     --columns "AddressID INT, AddressLine1 STRING, AddressLine2 STRING, City STRING, StateProvince STRING, CountryRegion STRING, PostalCode STRING, rowguid STRING, ModifiedDate TIMESTAMP" </code></pre>

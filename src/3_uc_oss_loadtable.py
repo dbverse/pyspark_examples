@@ -51,18 +51,14 @@ except Exception as e:
 # spark.sql(ddl_statement).show()
 
 ddl_statement = f"""
-    CREATE OR REPLACE TABLE demo.uc_emp.address
+    CREATE OR REPLACE TABLE demo.employee.address
     (AddressID INT, AddressLine1 STRING, AddressLine2 STRING, City STRING, StateProvince STRING, 
     CountryRegion STRING, PostalCode STRING, rowguid STRING, ModifiedDate TIMESTAMP)
     USING DELTA
     LOCATION '{delta_table_path}'
     COMMENT 'External table registered in Unity Catalog from existing Delta files';
     """
-spark.sql(ddl_statement).show()
-
-# Verify table existence and metadata
-print("\nVerifying external table creation:")
-spark.sql(f"DESCRIBE EXTENDED demo.uc_emp.address").show(truncate=False)
-spark.sql(f"SELECT * FROM demo.uc_emp.address LIMIT 5").show()
+# spark.sql(ddl_statement).show()
+spark.sql(ddl_statement)
 
 spark.stop()
